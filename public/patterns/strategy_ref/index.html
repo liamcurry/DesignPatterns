@@ -1,6 +1,6 @@
 <html lang="en">
   <head>
-    <title>Design Patterns | The Facade Pattern</title>
+    <title>Design Patterns | The Strategy Pattern</title>
     <link href='http://fonts.googleapis.com/css?family=Merriweather:300' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono' rel='stylesheet' type='text/css'>
@@ -34,27 +34,25 @@
     </nav>
     <div class="container">
       <div class="page-header">
-        <h1>The Facade Pattern</h1>
+        <h1>The Strategy Pattern</h1>
       </div>
       <div class="row">
         <div class="col-md-12">
           <div class="header">
             <h3>Explained as to a 5 year old.</h3>
           </div>        
-          <p>At bath time, mommy or daddy draws the batch for you.  And when they say it's ready, you jump in,
-          and have a great time trying to get as much bath water out of the tub as possible.  
-          </p>
-          <p>Have you ever tried
-          to draw a bath by yourself, though?  They're more to it than just flipping the water on.  You have to keep
-          the drain open, testing the water until the temperature is just right, adjusting the knob when needed.  
-          Once the temperature is where you'd be comfortable, it's time to plug the drain, pour in the bubble bath,
-          and watch the water level until it's high enough (but not too high).  Then you turn the water off, and you're
-          done!
+          <p>Let's say you have a new race car track playset.  The tracks come in little pieces that you, or a best friend, or mommy or daddy, 
+            can put together in many different ways.  Let's say this is a <i>really cool</i> play set, and includes a big red button that
+            rockets the race car onto the track.  The whole thing works great, as long as you connect the track to the big red button.
           </p>
           <p>
-          But you don't have to worry about all that.  Mommy or Daddy does this for you.  In this, your parent is acting
-          as a <strong>facade</strong>, and performing a complex series of steps or operations for you.  All you have to
-          do, is tell Mommy or Daddy that you're ready for a bath.  They do all the work of getting the bath ready.
+            You like big red buttons, so daddy makes three or four different race tracks.  You can then choose which one you want to race on next,
+             and daddy plugs it in to the big red button.  All you have to do is press the button, and watch the race cars zoom along the race track.
+          </p>
+          <p>
+            The <strong>Strategy Pattern</strong> can be seen here. An algorithm is declared (race cars can be shot down a race track by pressing a big red button).
+   The type of track, the color of the cars, etc, can vary from track to track.  Each works though, as long as it connects to the big red button
+    that fires them off.
           </p>
         </div>
       </div>
@@ -64,16 +62,54 @@
           <h3>Code Sample</h3>
         </div>
         <p>
-          <i>To be provided</i>.
           <pre>
             <code class="language-java">
+public interface RaceTrack() {
+  public void startRace();
+}
+
+public class RaceTrackA implements RaceTrack {
+  public void startRace() {
+    turnRight();
+    turnRight();
+    turnLeft();
+  }
+}
+
+public class RaceTrackB implements RaceTrack {
+  public void startRace() {
+    doBarrelRoll();
+    turnLeft();
+    doLoop();
+  }
+}
+
+public class BigRedButton() {
+  public void pressButton() {
+    List&lt;RaceTrack&gt; tracks = new ArrayList&lt;RaceTrack&gt;();
+    tracks.add(new RaceTrackA());
+    tracks.add(new RaceTrackB());
+    
+    for (RaceTrack track : tracks) {
+      track.startRace();
+    }
+  }
+}
             </code>
           </pre>
         </p>
         <div class="header">
           <h3>Explanation</h3>
         </div>
-        <p><i>To be provided.</i>
+        <p>
+          The code sample above illustrates the description at the beginning of this page.  An interface, <code>RaceTrack</code>, 
+          contains one method, <code>startRace()</code>.  We can then implement the interface any number of times, and flesh out that method.
+          We do this a few times (with <code>RaceTrackA</code> and <code>RaceTrackB</code>.
+        </p>
+        <p>
+          The Strategy Pattern's benefit shows itself within our iterator block, where we traverse over a list of <code>RaceTrack</code> objects. For each <code>RaceTrack</code>, 
+          we invoke the <code>startRace()</code> method.  This method does different things, depending on the implemention, but to our parent class,
+          it's all the same.  
         </p>
       </div>
       </div>
@@ -83,5 +119,8 @@
         <p class="text-muted">Design Patterns.  Henry Armstrong - 2015</p>
       </div>
     </footer>
-  </body>
+  <script>document.write('<script src="http://'
+        + (location.host || 'localhost').split(':')[0]
+		+ ':1313/livereload.js?mindelay=10"></'
+        + 'script>')</script></body>
 </html>

@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>The Strategy Pattern - Design Patterns</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="canonical" href="http://localhost:1313/DesignPatterns/patterns/strategy/">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Merriweather:300">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Ubuntu">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Ubuntu+Mono">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://localhost:1313/DesignPatterns/css/style.css">
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed"
+        data-toggle="collapse" data-target="#navbar-collapse-1"
+      >
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="http://localhost:1313/DesignPatterns">Design Patterns</a>
+    </div>
+    <div class="collapse navbar-collapse" id="navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <ul class="nav navbar-nav">
+  
+    <li>
+      <a href="/DesignPatterns/about/">About</a>
+      
+    </li>
+  
+    <li>
+      <a href="/DesignPatterns/patterns/">Design Pattern Index</a>
+      
+    </li>
+  
+    <li>
+      <a href="https://github.com/armstrhb/DesignPatterns/">Github</a>
+      
+    </li>
+  
+</ul>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  <div class="container">
+    <div class="page-header">
+      <h1>The Strategy Pattern</h1>
+      <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#eli5:010736ab8fdfc1cfa693a6e5a7960263">ELI5</a></li>
+<li><a href="#code-samples:010736ab8fdfc1cfa693a6e5a7960263">Code Samples</a>
+<ul>
+<li><a href="#java:010736ab8fdfc1cfa693a6e5a7960263">Java</a></li>
+<li><a href="#explanation:010736ab8fdfc1cfa693a6e5a7960263">Explanation</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        
+
+<h2 id="eli5:010736ab8fdfc1cfa693a6e5a7960263">ELI5</h2>
+
+<p>Let&rsquo;s say you have a new race car track playset. The tracks come in little
+pieces that you, or a best friend, or mommy or daddy, can put together in
+many different ways. Let&rsquo;s say this is a <strong>really cool</strong> play set, and includes
+a big red button that rockets the race car onto the track. The whole thing works
+great, as long as you connect the track to the big red button.</p>
+
+<p>You like big red buttons, so daddy makes three or four different race tracks.
+You can then choose which one you want to race on next, and daddy plugs it in
+to the big red button. All you have to do is press the button, and watch the
+race cars zoom along the race track.</p>
+
+<p>The <em>Strategy Pattern</em> can be seen here. An algorithm is declared (race cars
+can be shot down a race track by pressing a big red button). The type of track,
+the color of the cars, etc, can vary from track to track. Each works though, as
+long as it connects to the big red button that fires them off.</p>
+
+<h2 id="code-samples:010736ab8fdfc1cfa693a6e5a7960263">Code Samples</h2>
+
+<h3 id="java:010736ab8fdfc1cfa693a6e5a7960263">Java</h3>
+
+<p><div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span style="color: #000080; font-weight: bold">public</span> <span style="color: #000080; font-weight: bold">interface</span> RaceTrack() {
+  <span style="color: #000080; font-weight: bold">public</span> <span style="color: #000080; font-weight: bold">void</span> startRace();
+}
+
+<span style="color: #000080; font-weight: bold">public</span> <span style="color: #000080; font-weight: bold">class</span> RaceTrackA <span style="color: #000080; font-weight: bold">implements</span> RaceTrack {
+  <span style="color: #000080; font-weight: bold">public</span> <span style="color: #000080; font-weight: bold">void</span> startRace() {
+    turnRight();
+    turnRight();
+    turnLeft();
+  }
+}
+
+<span style="color: #000080; font-weight: bold">public</span> <span style="color: #000080; font-weight: bold">class</span> RaceTrackB <span style="color: #000080; font-weight: bold">implements</span> RaceTrack {
+  <span style="color: #000080; font-weight: bold">public</span> <span style="color: #000080; font-weight: bold">void</span> startRace() {
+    doBarrelRoll();
+    turnLeft();
+    doLoop();
+  }
+}
+
+<span style="color: #000080; font-weight: bold">public</span> <span style="color: #000080; font-weight: bold">class</span> BigRedButton() {
+  <span style="color: #000080; font-weight: bold">public</span> <span style="color: #000080; font-weight: bold">void</span> pressButton() {
+    List&lt;RaceTrack&gt; tracks = <span style="color: #000080; font-weight: bold">new</span> ArrayList&lt;RaceTrack&gt;();
+    tracks.<span style="color: #FF0000">add</span>(<span style="color: #000080; font-weight: bold">new</span> RaceTrackA());
+    tracks.<span style="color: #FF0000">add</span>(<span style="color: #000080; font-weight: bold">new</span> RaceTrackB());
+
+    <span style="color: #000080; font-weight: bold">for</span> (RaceTrack track : tracks) {
+      track.<span style="color: #FF0000">startRace</span>();
+    }
+  }
+}
+</pre></div>
+</p>
+
+<h3 id="explanation:010736ab8fdfc1cfa693a6e5a7960263">Explanation</h3>
+
+<p>The code sample above illustrates the description at the beginning of this
+page. An interface, <code>RaceTrack</code>, contains one method, <code>startRace()</code>. We can
+then implement the interface any number of times, and flesh out that method.
+We do this a few times (with <code>RaceTrackA</code> and <code>RaceTrackB</code>).</p>
+
+<p>The Strategy Pattern&rsquo;s benefit shows itself within our iterator block, where we
+traverse over a list of <code>RaceTrack</code> objects. For each <code>RaceTrack</code>, we invoke the
+<code>startRace()</code> method. This method does different things, depending on the
+implemention, but to our parent class, it&rsquo;s all the same.</p>
+
+      </div>
+    </div>
+  </div>
+    <footer class="footer">
+      <div class="container">
+        <p class="text-muted">Design Patterns.  Henry Armstrong - 2015</p>
+      </div>
+    </footer>
+  <script>document.write('<script src="http://'
+        + (location.host || 'localhost').split(':')[0]
+		+ ':1313/livereload.js?mindelay=10"></'
+        + 'script>')</script></body>
+</html>
+

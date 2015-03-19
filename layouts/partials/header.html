@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>{{ .Title }} - {{ .Site.Title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="canonical" href="{{ .Permalink }}">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Merriweather:300">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Ubuntu">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Ubuntu+Mono">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ .Site.BaseUrl }}/css/style.css">
+    {{ if .RSSlink }}<link rel="alternate" href="{{ .RSSlink }}" type="application/rss+xml" title="{{ .Site.Title }}">{{ end }}
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+  </head>
+  <body>

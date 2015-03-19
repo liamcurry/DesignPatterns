@@ -1,0 +1,8 @@
+baseurl = "https://armstrhb.github.io/DesignPatterns/"
+languageCode = "en-us"
+title = "Design Patterns"
+pygmentsstyle = "borland"
+
+[[menu.main]]
+  name = "Github"
+  url = "https://github.com/armstrhb/DesignPatterns/"

@@ -1,0 +1,468 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Design Patterns</title>
+    <link>http://localhost:1313/DesignPatterns/</link>
+    <description>Recent content on Design Patterns</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 19 Mar 2015 12:33:33 -0600</lastBuildDate>
+    <atom:link href="http://localhost:1313/DesignPatterns/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>About</title>
+      <link>http://localhost:1313/DesignPatterns/about/</link>
+      <pubDate>Thu, 19 Mar 2015 12:33:33 -0600</pubDate>
+      
+      <guid>http://localhost:1313/DesignPatterns/about/</guid>
+      <description>&lt;p&gt;TODO&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>The Iterator Pattern</title>
+      <link>http://localhost:1313/DesignPatterns/patterns/iterator/</link>
+      <pubDate>Thu, 19 Mar 2015 10:08:00 -0600</pubDate>
+      
+      <guid>http://localhost:1313/DesignPatterns/patterns/iterator/</guid>
+      <description>
+
+&lt;h2 id=&#34;eli5:f35e99ba19d9adb695744835c3395c7f&#34;&gt;ELI5&lt;/h2&gt;
+
+&lt;p&gt;When reading or looking through a book, do you think of the page after the one
+you&amp;rsquo;re on by its number (i.e. page 6)? Or, do you only think of it as the next
+page? Let&amp;rsquo;s say you remembered a fun picture that you wanted to look at on the
+last page you were on. Do you look at the page number of the page you&amp;rsquo;re on now,
+and then flip pages until you reach that page number, minus one? Or, do you say
+to yourself, &amp;ldquo;I want the page before this, so I&amp;rsquo;ll go back one.&amp;rdquo;&lt;/p&gt;
+
+&lt;p&gt;Sometimes, it doesn&amp;rsquo;t matter to keep track of things like this, where the pages
+are kept in order by the book binding, and you can use your fingers to flip to
+the next, or previous, page. The &lt;strong&gt;Iterator&lt;/strong&gt; pattern is shown here. You are
+able to go from the beginning of this book to the end, without worrying about
+how the pages are ordered or indexed. You just flip to the next page when
+you&amp;rsquo;re ready.&lt;/p&gt;
+
+&lt;h2 id=&#34;code-samples:f35e99ba19d9adb695744835c3395c7f&#34;&gt;Code Samples&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;To be provided&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;explanation:f35e99ba19d9adb695744835c3395c7f&#34;&gt;Explanation&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;To be provided&lt;/strong&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>The Thread Pool Pattern</title>
+      <link>http://localhost:1313/DesignPatterns/patterns/thread-pool/</link>
+      <pubDate>Thu, 19 Mar 2015 10:07:56 -0600</pubDate>
+      
+      <guid>http://localhost:1313/DesignPatterns/patterns/thread-pool/</guid>
+      <description>
+
+&lt;h2 id=&#34;eli5:c75b0219e09b3206bda0d30e0f66aee3&#34;&gt;ELI5&lt;/h2&gt;
+
+&lt;p&gt;Your teacher takes out ten pairs of scissors from the supply closet at the
+beginning of arts and crafts time. When any of the children need to use
+scissors, they ask the teacher, and the teacher will give them a pair, if one&amp;rsquo;s
+available. If all ten pairs of scissors are being used, the teacher will go to
+the supply closet and get more. When a child is done with the scissors, they are
+given back to the teacher to hold on to for the next child who needs it.&lt;/p&gt;
+
+&lt;p&gt;This is the &lt;em&gt;Thread Pool&lt;/em&gt; pattern. Expensive object creation (going into the
+closet to get scissors) is managed by reusing created objects (holding on to a
+few pairs at once). A manager object creates a repository, or pool, for a set
+number of objects to stay, available for use when something requests it. Once
+the requester has used the object, it is &amp;lsquo;released&amp;rsquo; back to the pool manager.
+The pool can grow or shrink, based on the demand of the pool&amp;rsquo;s objects.&lt;/p&gt;
+
+&lt;h2 id=&#34;code-sample:c75b0219e09b3206bda0d30e0f66aee3&#34;&gt;Code Sample&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;To be provided&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;explanation:c75b0219e09b3206bda0d30e0f66aee3&#34;&gt;Explanation&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;To be provided&lt;/strong&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>The Strategy Pattern</title>
+      <link>http://localhost:1313/DesignPatterns/patterns/strategy/</link>
+      <pubDate>Thu, 19 Mar 2015 10:07:51 -0600</pubDate>
+      
+      <guid>http://localhost:1313/DesignPatterns/patterns/strategy/</guid>
+      <description>
+
+&lt;h2 id=&#34;eli5:010736ab8fdfc1cfa693a6e5a7960263&#34;&gt;ELI5&lt;/h2&gt;
+
+&lt;p&gt;Let&amp;rsquo;s say you have a new race car track playset. The tracks come in little
+pieces that you, or a best friend, or mommy or daddy, can put together in
+many different ways. Let&amp;rsquo;s say this is a &lt;strong&gt;really cool&lt;/strong&gt; play set, and includes
+a big red button that rockets the race car onto the track. The whole thing works
+great, as long as you connect the track to the big red button.&lt;/p&gt;
+
+&lt;p&gt;You like big red buttons, so daddy makes three or four different race tracks.
+You can then choose which one you want to race on next, and daddy plugs it in
+to the big red button. All you have to do is press the button, and watch the
+race cars zoom along the race track.&lt;/p&gt;
+
+&lt;p&gt;The &lt;em&gt;Strategy Pattern&lt;/em&gt; can be seen here. An algorithm is declared (race cars
+can be shot down a race track by pressing a big red button). The type of track,
+the color of the cars, etc, can vary from track to track. Each works though, as
+long as it connects to the big red button that fires them off.&lt;/p&gt;
+
+&lt;h2 id=&#34;code-samples:010736ab8fdfc1cfa693a6e5a7960263&#34;&gt;Code Samples&lt;/h2&gt;
+
+&lt;h3 id=&#34;java:010736ab8fdfc1cfa693a6e5a7960263&#34;&gt;Java&lt;/h3&gt;
+
+&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #000080; font-weight: bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color: #000080; font-weight: bold&#34;&gt;interface&lt;/span&gt; RaceTrack() {
+  &lt;span style=&#34;color: #000080; font-weight: bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color: #000080; font-weight: bold&#34;&gt;void&lt;/span&gt; startRace();
+}
+
+&lt;span style=&#34;color: #000080; font-weight: bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color: #000080; font-weight: bold&#34;&gt;class&lt;/span&gt; RaceTrackA &lt;span style=&#34;color: #000080; font-weight: bold&#34;&gt;implements&lt;/span&gt; RaceTrack {
+  &lt;span style=&#34;color: #000080; font-weight: bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color: #000080; font-weight: bold&#34;&gt;void&lt;/span&gt; startRace() {
+    turnRight();
+    turnRight();
+    turnLeft();
+  }
+}
+
+&lt;span style=&#34;color: #000080; font-weight: bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color: #000080; font-weight: bold&#34;&gt;class&lt;/span&gt; RaceTrackB &lt;span style=&#34;color: #000080; font-weight: bold&#34;&gt;implements&lt;/span&gt; RaceTrack {
+  &lt;span style=&#34;color: #000080; font-weight: bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color: #000080; font-weight: bold&#34;&gt;void&lt;/span&gt; startRace() {
+    doBarrelRoll();
+    turnLeft();
+    doLoop();
+  }
+}
+
+&lt;span style=&#34;color: #000080; font-weight: bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color: #000080; font-weight: bold&#34;&gt;class&lt;/span&gt; BigRedButton() {
+  &lt;span style=&#34;color: #000080; font-weight: bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color: #000080; font-weight: bold&#34;&gt;void&lt;/span&gt; pressButton() {
+    List&amp;lt;RaceTrack&amp;gt; tracks = &lt;span style=&#34;color: #000080; font-weight: bold&#34;&gt;new&lt;/span&gt; ArrayList&amp;lt;RaceTrack&amp;gt;();
+    tracks.&lt;span style=&#34;color: #FF0000&#34;&gt;add&lt;/span&gt;(&lt;span style=&#34;color: #000080; font-weight: bold&#34;&gt;new&lt;/span&gt; RaceTrackA());
+    tracks.&lt;span style=&#34;color: #FF0000&#34;&gt;add&lt;/span&gt;(&lt;span style=&#34;color: #000080; font-weight: bold&#34;&gt;new&lt;/span&gt; RaceTrackB());
+
+    &lt;span style=&#34;color: #000080; font-weight: bold&#34;&gt;for&lt;/span&gt; (RaceTrack track : tracks) {
+      track.&lt;span style=&#34;color: #FF0000&#34;&gt;startRace&lt;/span&gt;();
+    }
+  }
+}
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/p&gt;
+
+&lt;h3 id=&#34;explanation:010736ab8fdfc1cfa693a6e5a7960263&#34;&gt;Explanation&lt;/h3&gt;
+
+&lt;p&gt;The code sample above illustrates the description at the beginning of this
+page. An interface, &lt;code&gt;RaceTrack&lt;/code&gt;, contains one method, &lt;code&gt;startRace()&lt;/code&gt;. We can
+then implement the interface any number of times, and flesh out that method.
+We do this a few times (with &lt;code&gt;RaceTrackA&lt;/code&gt; and &lt;code&gt;RaceTrackB&lt;/code&gt;).&lt;/p&gt;
+
+&lt;p&gt;The Strategy Pattern&amp;rsquo;s benefit shows itself within our iterator block, where we
+traverse over a list of &lt;code&gt;RaceTrack&lt;/code&gt; objects. For each &lt;code&gt;RaceTrack&lt;/code&gt;, we invoke the
+&lt;code&gt;startRace()&lt;/code&gt; method. This method does different things, depending on the
+implemention, but to our parent class, it&amp;rsquo;s all the same.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Design Pattern Index</title>
+      <link>http://localhost:1313/DesignPatterns/patterns/</link>
+      <pubDate>Thu, 19 Mar 2015 10:07:45 -0600</pubDate>
+      
+      <guid>http://localhost:1313/DesignPatterns/patterns/</guid>
+      <description>&lt;div class=&#34;jumbotron&#34;&gt;
+  &lt;h1&gt;Design Pattern Index&lt;/h1&gt;
+&lt;/div&gt;
+&lt;div class=&#34;row&#34;&gt;
+  &lt;div class=&#34;col-md-12&#34;&gt;Design Patterns are split into their classic categories.&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;row patterns&#34;&gt;
+  &lt;div class=&#34;col-md-3&#34;&gt;
+    &lt;h4&gt;Creational&lt;/h4&gt;
+    &lt;ul class=&#34;list-unstyled&#34;&gt;
+      &lt;li&gt;Abstract Factory&lt;/li&gt;
+      &lt;li&gt;Builder&lt;/li&gt;
+      &lt;li&gt;Factory Method&lt;/li&gt;
+      &lt;li&gt;Lazy Initialization&lt;/li&gt;
+      &lt;li&gt;Prototype&lt;/li&gt;
+      &lt;li&gt;Singleton&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+  &lt;div class=&#34;col-md-3&#34;&gt;
+    &lt;h4&gt;Structural&lt;/h4&gt;
+    &lt;ul class=&#34;list-unstyled&#34;&gt;
+      &lt;li&gt;Adapter&lt;/li&gt;
+      &lt;li&gt;Bridge&lt;/li&gt;
+      &lt;li&gt;Composite&lt;/li&gt;
+      &lt;li&gt;Decorator&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&#34;facade&#34;&gt;Facade&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;Flyweight&lt;/li&gt;
+      &lt;li&gt;Front Controller&lt;/li&gt;
+      &lt;li&gt;Proxy&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+  &lt;div class=&#34;col-md-3&#34;&gt;
+    &lt;h4&gt;Behavioral&lt;/h4&gt;
+    &lt;ul class=&#34;list-unstyled&#34;&gt;
+      &lt;li&gt;Chain of Responsibility&lt;/li&gt;
+      &lt;li&gt;Command&lt;/li&gt;
+      &lt;li&gt;Interpreter&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&#34;iterator&#34;&gt;Iterator&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;Mediator&lt;/li&gt;
+      &lt;li&gt;Memento&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&#34;observer&#34;&gt;Observer&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;State&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&#34;strategy&#34;&gt;Strategy&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;Template Method&lt;/li&gt;
+      &lt;li&gt;Visitor&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+  &lt;div class=&#34;col-md-3&#34;&gt;
+    &lt;h4&gt;Concurrency&lt;/h4&gt;
+    &lt;ul class=&#34;list-unstyled&#34;&gt;
+      &lt;li&gt;Active Object&lt;/li&gt;
+      &lt;li&gt;Double-checked locking&lt;/li&gt;
+      &lt;li&gt;Locking&lt;/li&gt;
+      &lt;li&gt;Monitor Object&lt;/li&gt;
+      &lt;li&gt;Reactor&lt;/li&gt;
+      &lt;li&gt;Scheduler&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&#34;thread-pool&#34;&gt;Thread Pool&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;Thread-Specific Storage&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>The Facade Pattern</title>
+      <link>http://localhost:1313/DesignPatterns/patterns/facade/</link>
+      <pubDate>Thu, 19 Mar 2015 10:07:45 -0600</pubDate>
+      
+      <guid>http://localhost:1313/DesignPatterns/patterns/facade/</guid>
+      <description>
+
+&lt;h2 id=&#34;eli5:184257c8e3a9137497a20d49b4964047&#34;&gt;ELI5&lt;/h2&gt;
+
+&lt;p&gt;At bath time, mommy or daddy draws the batch for you. And when they say it&amp;rsquo;s
+ready, you jump in, and have a great time trying to get as much bath water out
+of the tub as possible.&lt;/p&gt;
+
+&lt;p&gt;Have you ever tried to draw a bath by yourself, though? They&amp;rsquo;re more to it than
+just flipping the water on. You have to keep the drain open, testing the water
+until the temperature is just right, adjusting the knob when needed. Once the
+temperature is where you&amp;rsquo;d be comfortable, it&amp;rsquo;s time to plug the drain, pour in
+the bubble bath, and watch the water level until it&amp;rsquo;s high enough (but not too
+high). Then you turn the water off, and you&amp;rsquo;re done!&lt;/p&gt;
+
+&lt;p&gt;But you don&amp;rsquo;t have to worry about all that. Mommy or Daddy does this for you.
+In this, your parent is acting as a &lt;strong&gt;facade&lt;/strong&gt;, and performing a complex series
+of steps or operations for you. All you have to do, is tell Mommy or Daddy that
+you&amp;rsquo;re ready for a bath. They do all the work of getting the bath ready.&lt;/p&gt;
+
+&lt;h2 id=&#34;code-samples:184257c8e3a9137497a20d49b4964047&#34;&gt;Code Samples&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;To be provided&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;explanation:184257c8e3a9137497a20d49b4964047&#34;&gt;Explanation&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;To be provided&lt;/strong&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>The Observer Pattern</title>
+      <link>http://localhost:1313/DesignPatterns/patterns/observer/</link>
+      <pubDate>Thu, 19 Mar 2015 10:07:40 -0600</pubDate>
+      
+      <guid>http://localhost:1313/DesignPatterns/patterns/observer/</guid>
+      <description>
+
+&lt;h2 id=&#34;eli5:176314bb5b9f372fe3d37195de41f249&#34;&gt;ELI5&lt;/h2&gt;
+
+&lt;p&gt;It is close to dinner time, and you&amp;rsquo;re hungry. Mommy or Daddy is cooking
+dinner. You want to make sure that you know dinner is ready as soon as it&amp;rsquo;s
+ready. Would you walk into the kitchen every 5 minutes and ask Mommy/Daddy if
+dinner is ready? Or, would you ask Mommy/Daddy to let you know when dinner&amp;rsquo;s
+ready? That way, you can do other things, like playing or watching a cartoon.
+When dinner is ready, you&amp;rsquo;ll be told so, and until then, you don&amp;rsquo;t have to
+think about it, except when you&amp;rsquo;re tummy reminds you.&lt;/p&gt;
+
+&lt;p&gt;The &lt;em&gt;Observer&lt;/em&gt; pattern is shown in this, because you asked your parent to tell
+you when something that you care about (dinner) has changed its state (it&amp;rsquo;s
+ready to be eaten).&lt;/p&gt;
+
+&lt;h2 id=&#34;code-samples:176314bb5b9f372fe3d37195de41f249&#34;&gt;Code Samples&lt;/h2&gt;
+
+&lt;h3 id=&#34;java:176314bb5b9f372fe3d37195de41f249&#34;&gt;Java&lt;/h3&gt;
+
+&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #000080; font-weight: bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color: #000080; font-weight: bold&#34;&gt;class&lt;/span&gt; MealCooker {
+  &lt;span style=&#34;color: #000080; font-weight: bold&#34;&gt;private&lt;/span&gt; List&amp;lt;Observer&amp;gt; observers = &lt;span style=&#34;color: #000080; font-weight: bold&#34;&gt;new&lt;/span&gt; ArrayList&amp;lt;Observer&amp;gt;();
+
+  &lt;span style=&#34;color: #000080; font-weight: bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color: #000080; font-weight: bold&#34;&gt;void&lt;/span&gt; addObserver(Observer observer) {
+    observers.&lt;span style=&#34;color: #FF0000&#34;&gt;add&lt;/span&gt;(observer);
+  }
+
+  &lt;span style=&#34;color: #000080; font-weight: bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color: #000080; font-weight: bold&#34;&gt;void&lt;/span&gt; cookMeal() {
+    &lt;span style=&#34;color: #008800; font-style: italic&#34;&gt;// prepareIngredients();&lt;/span&gt;
+    &lt;span style=&#34;color: #008800; font-style: italic&#34;&gt;// allowToCool();&lt;/span&gt;
+
+    &lt;span style=&#34;color: #000080; font-weight: bold&#34;&gt;for&lt;/span&gt; (Observer observer : observers) {
+      observer.&lt;span style=&#34;color: #FF0000&#34;&gt;notifyMealReady&lt;/span&gt;();
+    }
+  }
+}
+
+&lt;span style=&#34;color: #000080; font-weight: bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color: #000080; font-weight: bold&#34;&gt;interface&lt;/span&gt; Observer {
+  &lt;span style=&#34;color: #000080; font-weight: bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color: #000080; font-weight: bold&#34;&gt;void&lt;/span&gt; notifyMealReady();
+}
+
+&lt;span style=&#34;color: #000080; font-weight: bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color: #000080; font-weight: bold&#34;&gt;class&lt;/span&gt; Child &lt;span style=&#34;color: #000080; font-weight: bold&#34;&gt;implements&lt;/span&gt; Observer {
+  &lt;span style=&#34;color: #000080; font-weight: bold&#34;&gt;private&lt;/span&gt; MealCooker parent;
+
+  &lt;span style=&#34;color: #000080; font-weight: bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color: #000080; font-weight: bold&#34;&gt;void&lt;/span&gt; setMealCooker(MealCooker inCooker) {
+    parent = inCooker;
+  }
+
+  &lt;span style=&#34;color: #000080; font-weight: bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color: #000080; font-weight: bold&#34;&gt;void&lt;/span&gt; whenHungry() {
+    parent.&lt;span style=&#34;color: #FF0000&#34;&gt;addObserver&lt;/span&gt;(&lt;span style=&#34;color: #000080; font-weight: bold&#34;&gt;this&lt;/span&gt;);
+  }
+
+  &lt;span style=&#34;color: #000080; font-weight: bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color: #000080; font-weight: bold&#34;&gt;void&lt;/span&gt; notifyMealReady() {
+    &lt;span style=&#34;color: #008800; font-style: italic&#34;&gt;// washUp();&lt;/span&gt;
+    &lt;span style=&#34;color: #008800; font-style: italic&#34;&gt;// comeToTable();&lt;/span&gt;
+    &lt;span style=&#34;color: #008800; font-style: italic&#34;&gt;// eat()&lt;/span&gt;
+  }
+}
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/p&gt;
+
+&lt;h3 id=&#34;javascript-es6:176314bb5b9f372fe3d37195de41f249&#34;&gt;Javascript (ES6)&lt;/h3&gt;
+
+&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #000080; font-weight: bold&#34;&gt;let&lt;/span&gt; hungryChildren = []
+
+&lt;span style=&#34;color: #000080; font-weight: bold&#34;&gt;class&lt;/span&gt; Parent {
+  constructor(name) {
+    &lt;span style=&#34;color: #000080; font-weight: bold&#34;&gt;this&lt;/span&gt;.name = name
+  }
+
+  cookMeal() {
+    &lt;span style=&#34;color: #008800; font-style: italic&#34;&gt;// prepareIngredients()&lt;/span&gt;
+    &lt;span style=&#34;color: #008800; font-style: italic&#34;&gt;// allowToCool()&lt;/span&gt;
+    console.log(&lt;span style=&#34;color: #a61717; background-color: #e3d2d2&#34;&gt;`&lt;/span&gt;${&lt;span style=&#34;color: #000080; font-weight: bold&#34;&gt;this&lt;/span&gt;.name} cooked a meal!&lt;span style=&#34;color: #a61717; background-color: #e3d2d2&#34;&gt;`&lt;/span&gt;)
+    hungryChildren.forEach((kid) =&amp;gt; kid.notifyMealReady())
+    hungryChildren = []
+  }
+}
+
+&lt;span style=&#34;color: #000080; font-weight: bold&#34;&gt;class&lt;/span&gt; Child {
+  constructor(name) {
+    &lt;span style=&#34;color: #000080; font-weight: bold&#34;&gt;this&lt;/span&gt;.name = name
+  }
+
+  isHungry() {
+    hungryChildren.push(&lt;span style=&#34;color: #000080; font-weight: bold&#34;&gt;this&lt;/span&gt;)
+    console.log(&lt;span style=&#34;color: #a61717; background-color: #e3d2d2&#34;&gt;`&lt;/span&gt;${&lt;span style=&#34;color: #000080; font-weight: bold&#34;&gt;this&lt;/span&gt;.name} is hungry!&lt;span style=&#34;color: #a61717; background-color: #e3d2d2&#34;&gt;`&lt;/span&gt;)
+  }
+
+  notifyMealReady() {
+    &lt;span style=&#34;color: #008800; font-style: italic&#34;&gt;// washUp()&lt;/span&gt;
+    &lt;span style=&#34;color: #008800; font-style: italic&#34;&gt;// comeToTable()&lt;/span&gt;
+    &lt;span style=&#34;color: #008800; font-style: italic&#34;&gt;// eat()&lt;/span&gt;
+    console.log(&lt;span style=&#34;color: #a61717; background-color: #e3d2d2&#34;&gt;`&lt;/span&gt;${&lt;span style=&#34;color: #000080; font-weight: bold&#34;&gt;this&lt;/span&gt;.name} has been fed!&lt;span style=&#34;color: #a61717; background-color: #e3d2d2&#34;&gt;`&lt;/span&gt;)
+  }
+}
+
+&lt;span style=&#34;color: #000080; font-weight: bold&#34;&gt;let&lt;/span&gt; mommy = &lt;span style=&#34;color: #000080; font-weight: bold&#34;&gt;new&lt;/span&gt; Parent(&lt;span style=&#34;color: #0000FF&#34;&gt;&amp;#39;Mommy&amp;#39;&lt;/span&gt;)
+&lt;span style=&#34;color: #000080; font-weight: bold&#34;&gt;let&lt;/span&gt; daddy = &lt;span style=&#34;color: #000080; font-weight: bold&#34;&gt;new&lt;/span&gt; Parent(&lt;span style=&#34;color: #0000FF&#34;&gt;&amp;#39;Daddy&amp;#39;&lt;/span&gt;)
+
+&lt;span style=&#34;color: #000080; font-weight: bold&#34;&gt;let&lt;/span&gt; joey = &lt;span style=&#34;color: #000080; font-weight: bold&#34;&gt;new&lt;/span&gt; Child(&lt;span style=&#34;color: #0000FF&#34;&gt;&amp;#39;Joey&amp;#39;&lt;/span&gt;)
+&lt;span style=&#34;color: #000080; font-weight: bold&#34;&gt;let&lt;/span&gt; jimmy = &lt;span style=&#34;color: #000080; font-weight: bold&#34;&gt;new&lt;/span&gt; Child(&lt;span style=&#34;color: #0000FF&#34;&gt;&amp;#39;Jimmy&amp;#39;&lt;/span&gt;)
+&lt;span style=&#34;color: #000080; font-weight: bold&#34;&gt;let&lt;/span&gt; johnny = &lt;span style=&#34;color: #000080; font-weight: bold&#34;&gt;new&lt;/span&gt; Child(&lt;span style=&#34;color: #0000FF&#34;&gt;&amp;#39;Johnny&amp;#39;&lt;/span&gt;)
+
+joey.isHungry()   &lt;span style=&#34;color: #008800; font-style: italic&#34;&gt;// &amp;quot;Joey is hungry!&amp;quot;&lt;/span&gt;
+johnny.isHungry() &lt;span style=&#34;color: #008800; font-style: italic&#34;&gt;// &amp;quot;Johnny is hungry!&amp;quot;&lt;/span&gt;
+daddy.cookMeal()  &lt;span style=&#34;color: #008800; font-style: italic&#34;&gt;// &amp;quot;Daddy cooked a meal!&amp;quot;&lt;/span&gt;
+&lt;span style=&#34;color: #008800; font-style: italic&#34;&gt;// &amp;quot;Joey has been fed!&amp;quot;&lt;/span&gt;
+&lt;span style=&#34;color: #008800; font-style: italic&#34;&gt;// &amp;quot;Johnny has been fed!&amp;quot;&lt;/span&gt;
+
+jimmy.isHungry() &lt;span style=&#34;color: #008800; font-style: italic&#34;&gt;// &amp;quot;Jimmy is hungry!&amp;quot;&lt;/span&gt;
+mommy.cookMeal() &lt;span style=&#34;color: #008800; font-style: italic&#34;&gt;// &amp;quot;Mommy cooked a meal!&amp;quot;&lt;/span&gt;
+&lt;span style=&#34;color: #008800; font-style: italic&#34;&gt;// &amp;quot;Jimmy has been fed!&amp;quot;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;//jsbin.com/hagicuquru/1/edit?js,console&#34;&gt;View this example on JS Bin&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;go:176314bb5b9f372fe3d37195de41f249&#34;&gt;Go&lt;/h3&gt;
+
+&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #000080; font-weight: bold&#34;&gt;package&lt;/span&gt; main
+
+&lt;span style=&#34;color: #000080; font-weight: bold&#34;&gt;import&lt;/span&gt; &lt;span style=&#34;color: #0000FF&#34;&gt;&amp;quot;fmt&amp;quot;&lt;/span&gt;
+
+&lt;span style=&#34;color: #000080; font-weight: bold&#34;&gt;var&lt;/span&gt; hungryChildren = []Child{}
+
+&lt;span style=&#34;color: #000080; font-weight: bold&#34;&gt;type&lt;/span&gt; Parent &lt;span style=&#34;color: #000080; font-weight: bold&#34;&gt;struct&lt;/span&gt; {
+  name &lt;span style=&#34;color: #000080; font-weight: bold&#34;&gt;string&lt;/span&gt;
+}
+
+&lt;span style=&#34;color: #000080; font-weight: bold&#34;&gt;func&lt;/span&gt; (p Parent) cookMeal() {
+  &lt;span style=&#34;color: #008800; font-style: italic&#34;&gt;// prepareIngredients()&lt;/span&gt;
+  &lt;span style=&#34;color: #008800; font-style: italic&#34;&gt;// allowToCool()&lt;/span&gt;
+  fmt.Printf(&lt;span style=&#34;color: #0000FF&#34;&gt;&amp;quot;%s cooked a meal!\n&amp;quot;&lt;/span&gt;, p.name)
+  &lt;span style=&#34;color: #000080; font-weight: bold&#34;&gt;for&lt;/span&gt; _, child := &lt;span style=&#34;color: #000080; font-weight: bold&#34;&gt;range&lt;/span&gt; hungryChildren {
+    child.notifyMealReady()
+  }
+  hungryChildren = []Child{}
+}
+
+&lt;span style=&#34;color: #000080; font-weight: bold&#34;&gt;type&lt;/span&gt; Child &lt;span style=&#34;color: #000080; font-weight: bold&#34;&gt;struct&lt;/span&gt; {
+  name &lt;span style=&#34;color: #000080; font-weight: bold&#34;&gt;string&lt;/span&gt;
+}
+
+&lt;span style=&#34;color: #000080; font-weight: bold&#34;&gt;func&lt;/span&gt; (c Child) isHungry() {
+  hungryChildren = append(hungryChildren, c)
+  fmt.Printf(&lt;span style=&#34;color: #0000FF&#34;&gt;&amp;quot;%s is hungry!\n&amp;quot;&lt;/span&gt;, c.name)
+}
+
+&lt;span style=&#34;color: #000080; font-weight: bold&#34;&gt;func&lt;/span&gt; (c Child) notifyMealReady() {
+  &lt;span style=&#34;color: #008800; font-style: italic&#34;&gt;// washUp()&lt;/span&gt;
+  &lt;span style=&#34;color: #008800; font-style: italic&#34;&gt;// comeToTable()&lt;/span&gt;
+  &lt;span style=&#34;color: #008800; font-style: italic&#34;&gt;// eat()&lt;/span&gt;
+  fmt.Printf(&lt;span style=&#34;color: #0000FF&#34;&gt;&amp;quot;%s has been fed!\n&amp;quot;&lt;/span&gt;, c.name)
+}
+
+&lt;span style=&#34;color: #000080; font-weight: bold&#34;&gt;func&lt;/span&gt; main() {
+  mommy := Parent{&lt;span style=&#34;color: #0000FF&#34;&gt;&amp;quot;Mommy&amp;quot;&lt;/span&gt;}
+  daddy := Parent{&lt;span style=&#34;color: #0000FF&#34;&gt;&amp;quot;Daddy&amp;quot;&lt;/span&gt;}
+
+  joey := Child{&lt;span style=&#34;color: #0000FF&#34;&gt;&amp;quot;Joey&amp;quot;&lt;/span&gt;}
+  jimmy := Child{&lt;span style=&#34;color: #0000FF&#34;&gt;&amp;quot;Jimmy&amp;quot;&lt;/span&gt;}
+  johnny := Child{&lt;span style=&#34;color: #0000FF&#34;&gt;&amp;quot;Johnny&amp;quot;&lt;/span&gt;}
+
+  joey.isHungry()   &lt;span style=&#34;color: #008800; font-style: italic&#34;&gt;// &amp;quot;Joey is hungry!&amp;quot;&lt;/span&gt;
+  johnny.isHungry() &lt;span style=&#34;color: #008800; font-style: italic&#34;&gt;// &amp;quot;Johnny is hungry!&amp;quot;&lt;/span&gt;
+  daddy.cookMeal()  &lt;span style=&#34;color: #008800; font-style: italic&#34;&gt;// &amp;quot;Daddy cooked a meal!&amp;quot;&lt;/span&gt;
+  &lt;span style=&#34;color: #008800; font-style: italic&#34;&gt;// &amp;quot;Joey has been fed!&amp;quot;&lt;/span&gt;
+  &lt;span style=&#34;color: #008800; font-style: italic&#34;&gt;// &amp;quot;Johnny has been fed!&amp;quot;&lt;/span&gt;
+
+  jimmy.isHungry() &lt;span style=&#34;color: #008800; font-style: italic&#34;&gt;// &amp;quot;Jimmy is hungry!&amp;quot;&lt;/span&gt;
+  mommy.cookMeal() &lt;span style=&#34;color: #008800; font-style: italic&#34;&gt;// &amp;quot;Mommy cooked a meal!&amp;quot;&lt;/span&gt;
+  &lt;span style=&#34;color: #008800; font-style: italic&#34;&gt;// &amp;quot;Johnny has been fed!&amp;quot;&lt;/span&gt;
+}
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://play.golang.org/p/Fu__abGi5U&#34;&gt;View this example on the Go Playground&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;explanation:176314bb5b9f372fe3d37195de41f249&#34;&gt;Explanation&lt;/h2&gt;
+
+&lt;p&gt;The &lt;code&gt;MealCooker&lt;/code&gt; object keeps track of a list of &lt;code&gt;Observer&lt;/code&gt; objects. When it is
+done performing its long &lt;code&gt;cookMeal&lt;/code&gt; function, it spins through each &lt;code&gt;Observer&lt;/code&gt;
+object and notifies it.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

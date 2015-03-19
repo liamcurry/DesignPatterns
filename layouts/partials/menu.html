@@ -1,0 +1,10 @@
+<ul class="nav navbar-nav">
+  {{ range . }}
+    <li>
+      <a href="{{.Url}}">{{ .Name }}</a>
+      {{ if .HasChildren }}
+        {{ partial "menu.html" .Children }}
+      {{ end }}
+    </li>
+  {{end}}
+</ul>

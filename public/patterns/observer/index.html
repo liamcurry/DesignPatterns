@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>The Observer Pattern - Design Patterns</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="canonical" href="http://localhost:1313/DesignPatterns/patterns/observer/">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Merriweather:300">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Ubuntu">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Ubuntu+Mono">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://localhost:1313/DesignPatterns/css/style.css">
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed"
+        data-toggle="collapse" data-target="#navbar-collapse-1"
+      >
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="http://localhost:1313/DesignPatterns">Design Patterns</a>
+    </div>
+    <div class="collapse navbar-collapse" id="navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <ul class="nav navbar-nav">
+  
+    <li>
+      <a href="/DesignPatterns/about/">About</a>
+      
+    </li>
+  
+    <li>
+      <a href="/DesignPatterns/patterns/">Design Pattern Index</a>
+      
+    </li>
+  
+    <li>
+      <a href="https://github.com/armstrhb/DesignPatterns/">Github</a>
+      
+    </li>
+  
+</ul>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  <div class="container">
+    <div class="page-header">
+      <h1>The Observer Pattern</h1>
+      <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#eli5:176314bb5b9f372fe3d37195de41f249">ELI5</a></li>
+<li><a href="#code-samples:176314bb5b9f372fe3d37195de41f249">Code Samples</a>
+<ul>
+<li><a href="#java:176314bb5b9f372fe3d37195de41f249">Java</a></li>
+<li><a href="#javascript-es6:176314bb5b9f372fe3d37195de41f249">Javascript (ES6)</a></li>
+<li><a href="#go:176314bb5b9f372fe3d37195de41f249">Go</a></li>
+</ul></li>
+<li><a href="#explanation:176314bb5b9f372fe3d37195de41f249">Explanation</a></li>
+</ul></li>
+</ul>
+</nav>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        
+
+<h2 id="eli5:176314bb5b9f372fe3d37195de41f249">ELI5</h2>
+
+<p>It is close to dinner time, and you&rsquo;re hungry. Mommy or Daddy is cooking
+dinner. You want to make sure that you know dinner is ready as soon as it&rsquo;s
+ready. Would you walk into the kitchen every 5 minutes and ask Mommy/Daddy if
+dinner is ready? Or, would you ask Mommy/Daddy to let you know when dinner&rsquo;s
+ready? That way, you can do other things, like playing or watching a cartoon.
+When dinner is ready, you&rsquo;ll be told so, and until then, you don&rsquo;t have to
+think about it, except when you&rsquo;re tummy reminds you.</p>
+
+<p>The <em>Observer</em> pattern is shown in this, because you asked your parent to tell
+you when something that you care about (dinner) has changed its state (it&rsquo;s
+ready to be eaten).</p>
+
+<h2 id="code-samples:176314bb5b9f372fe3d37195de41f249">Code Samples</h2>
+
+<h3 id="java:176314bb5b9f372fe3d37195de41f249">Java</h3>
+
+<p><div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span style="color: #000080; font-weight: bold">public</span> <span style="color: #000080; font-weight: bold">class</span> MealCooker {
+  <span style="color: #000080; font-weight: bold">private</span> List&lt;Observer&gt; observers = <span style="color: #000080; font-weight: bold">new</span> ArrayList&lt;Observer&gt;();
+
+  <span style="color: #000080; font-weight: bold">public</span> <span style="color: #000080; font-weight: bold">void</span> addObserver(Observer observer) {
+    observers.<span style="color: #FF0000">add</span>(observer);
+  }
+
+  <span style="color: #000080; font-weight: bold">public</span> <span style="color: #000080; font-weight: bold">void</span> cookMeal() {
+    <span style="color: #008800; font-style: italic">// prepareIngredients();</span>
+    <span style="color: #008800; font-style: italic">// allowToCool();</span>
+
+    <span style="color: #000080; font-weight: bold">for</span> (Observer observer : observers) {
+      observer.<span style="color: #FF0000">notifyMealReady</span>();
+    }
+  }
+}
+
+<span style="color: #000080; font-weight: bold">public</span> <span style="color: #000080; font-weight: bold">interface</span> Observer {
+  <span style="color: #000080; font-weight: bold">public</span> <span style="color: #000080; font-weight: bold">void</span> notifyMealReady();
+}
+
+<span style="color: #000080; font-weight: bold">public</span> <span style="color: #000080; font-weight: bold">class</span> Child <span style="color: #000080; font-weight: bold">implements</span> Observer {
+  <span style="color: #000080; font-weight: bold">private</span> MealCooker parent;
+
+  <span style="color: #000080; font-weight: bold">public</span> <span style="color: #000080; font-weight: bold">void</span> setMealCooker(MealCooker inCooker) {
+    parent = inCooker;
+  }
+
+  <span style="color: #000080; font-weight: bold">public</span> <span style="color: #000080; font-weight: bold">void</span> whenHungry() {
+    parent.<span style="color: #FF0000">addObserver</span>(<span style="color: #000080; font-weight: bold">this</span>);
+  }
+
+  <span style="color: #000080; font-weight: bold">public</span> <span style="color: #000080; font-weight: bold">void</span> notifyMealReady() {
+    <span style="color: #008800; font-style: italic">// washUp();</span>
+    <span style="color: #008800; font-style: italic">// comeToTable();</span>
+    <span style="color: #008800; font-style: italic">// eat()</span>
+  }
+}
+</pre></div>
+</p>
+
+<h3 id="javascript-es6:176314bb5b9f372fe3d37195de41f249">Javascript (ES6)</h3>
+
+<p><div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span style="color: #000080; font-weight: bold">let</span> hungryChildren = []
+
+<span style="color: #000080; font-weight: bold">class</span> Parent {
+  constructor(name) {
+    <span style="color: #000080; font-weight: bold">this</span>.name = name
+  }
+
+  cookMeal() {
+    <span style="color: #008800; font-style: italic">// prepareIngredients()</span>
+    <span style="color: #008800; font-style: italic">// allowToCool()</span>
+    console.log(<span style="color: #a61717; background-color: #e3d2d2">`</span>${<span style="color: #000080; font-weight: bold">this</span>.name} cooked a meal!<span style="color: #a61717; background-color: #e3d2d2">`</span>)
+    hungryChildren.forEach((kid) =&gt; kid.notifyMealReady())
+    hungryChildren = []
+  }
+}
+
+<span style="color: #000080; font-weight: bold">class</span> Child {
+  constructor(name) {
+    <span style="color: #000080; font-weight: bold">this</span>.name = name
+  }
+
+  isHungry() {
+    hungryChildren.push(<span style="color: #000080; font-weight: bold">this</span>)
+    console.log(<span style="color: #a61717; background-color: #e3d2d2">`</span>${<span style="color: #000080; font-weight: bold">this</span>.name} is hungry!<span style="color: #a61717; background-color: #e3d2d2">`</span>)
+  }
+
+  notifyMealReady() {
+    <span style="color: #008800; font-style: italic">// washUp()</span>
+    <span style="color: #008800; font-style: italic">// comeToTable()</span>
+    <span style="color: #008800; font-style: italic">// eat()</span>
+    console.log(<span style="color: #a61717; background-color: #e3d2d2">`</span>${<span style="color: #000080; font-weight: bold">this</span>.name} has been fed!<span style="color: #a61717; background-color: #e3d2d2">`</span>)
+  }
+}
+
+<span style="color: #000080; font-weight: bold">let</span> mommy = <span style="color: #000080; font-weight: bold">new</span> Parent(<span style="color: #0000FF">&#39;Mommy&#39;</span>)
+<span style="color: #000080; font-weight: bold">let</span> daddy = <span style="color: #000080; font-weight: bold">new</span> Parent(<span style="color: #0000FF">&#39;Daddy&#39;</span>)
+
+<span style="color: #000080; font-weight: bold">let</span> joey = <span style="color: #000080; font-weight: bold">new</span> Child(<span style="color: #0000FF">&#39;Joey&#39;</span>)
+<span style="color: #000080; font-weight: bold">let</span> jimmy = <span style="color: #000080; font-weight: bold">new</span> Child(<span style="color: #0000FF">&#39;Jimmy&#39;</span>)
+<span style="color: #000080; font-weight: bold">let</span> johnny = <span style="color: #000080; font-weight: bold">new</span> Child(<span style="color: #0000FF">&#39;Johnny&#39;</span>)
+
+joey.isHungry()   <span style="color: #008800; font-style: italic">// &quot;Joey is hungry!&quot;</span>
+johnny.isHungry() <span style="color: #008800; font-style: italic">// &quot;Johnny is hungry!&quot;</span>
+daddy.cookMeal()  <span style="color: #008800; font-style: italic">// &quot;Daddy cooked a meal!&quot;</span>
+<span style="color: #008800; font-style: italic">// &quot;Joey has been fed!&quot;</span>
+<span style="color: #008800; font-style: italic">// &quot;Johnny has been fed!&quot;</span>
+
+jimmy.isHungry() <span style="color: #008800; font-style: italic">// &quot;Jimmy is hungry!&quot;</span>
+mommy.cookMeal() <span style="color: #008800; font-style: italic">// &quot;Mommy cooked a meal!&quot;</span>
+<span style="color: #008800; font-style: italic">// &quot;Jimmy has been fed!&quot;</span>
+</pre></div>
+</p>
+
+<p><a href="//jsbin.com/hagicuquru/1/edit?js,console">View this example on JS Bin</a></p>
+
+<h3 id="go:176314bb5b9f372fe3d37195de41f249">Go</h3>
+
+<p><div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span style="color: #000080; font-weight: bold">package</span> main
+
+<span style="color: #000080; font-weight: bold">import</span> <span style="color: #0000FF">&quot;fmt&quot;</span>
+
+<span style="color: #000080; font-weight: bold">var</span> hungryChildren = []Child{}
+
+<span style="color: #000080; font-weight: bold">type</span> Parent <span style="color: #000080; font-weight: bold">struct</span> {
+  name <span style="color: #000080; font-weight: bold">string</span>
+}
+
+<span style="color: #000080; font-weight: bold">func</span> (p Parent) cookMeal() {
+  <span style="color: #008800; font-style: italic">// prepareIngredients()</span>
+  <span style="color: #008800; font-style: italic">// allowToCool()</span>
+  fmt.Printf(<span style="color: #0000FF">&quot;%s cooked a meal!\n&quot;</span>, p.name)
+  <span style="color: #000080; font-weight: bold">for</span> _, child := <span style="color: #000080; font-weight: bold">range</span> hungryChildren {
+    child.notifyMealReady()
+  }
+  hungryChildren = []Child{}
+}
+
+<span style="color: #000080; font-weight: bold">type</span> Child <span style="color: #000080; font-weight: bold">struct</span> {
+  name <span style="color: #000080; font-weight: bold">string</span>
+}
+
+<span style="color: #000080; font-weight: bold">func</span> (c Child) isHungry() {
+  hungryChildren = append(hungryChildren, c)
+  fmt.Printf(<span style="color: #0000FF">&quot;%s is hungry!\n&quot;</span>, c.name)
+}
+
+<span style="color: #000080; font-weight: bold">func</span> (c Child) notifyMealReady() {
+  <span style="color: #008800; font-style: italic">// washUp()</span>
+  <span style="color: #008800; font-style: italic">// comeToTable()</span>
+  <span style="color: #008800; font-style: italic">// eat()</span>
+  fmt.Printf(<span style="color: #0000FF">&quot;%s has been fed!\n&quot;</span>, c.name)
+}
+
+<span style="color: #000080; font-weight: bold">func</span> main() {
+  mommy := Parent{<span style="color: #0000FF">&quot;Mommy&quot;</span>}
+  daddy := Parent{<span style="color: #0000FF">&quot;Daddy&quot;</span>}
+
+  joey := Child{<span style="color: #0000FF">&quot;Joey&quot;</span>}
+  jimmy := Child{<span style="color: #0000FF">&quot;Jimmy&quot;</span>}
+  johnny := Child{<span style="color: #0000FF">&quot;Johnny&quot;</span>}
+
+  joey.isHungry()   <span style="color: #008800; font-style: italic">// &quot;Joey is hungry!&quot;</span>
+  johnny.isHungry() <span style="color: #008800; font-style: italic">// &quot;Johnny is hungry!&quot;</span>
+  daddy.cookMeal()  <span style="color: #008800; font-style: italic">// &quot;Daddy cooked a meal!&quot;</span>
+  <span style="color: #008800; font-style: italic">// &quot;Joey has been fed!&quot;</span>
+  <span style="color: #008800; font-style: italic">// &quot;Johnny has been fed!&quot;</span>
+
+  jimmy.isHungry() <span style="color: #008800; font-style: italic">// &quot;Jimmy is hungry!&quot;</span>
+  mommy.cookMeal() <span style="color: #008800; font-style: italic">// &quot;Mommy cooked a meal!&quot;</span>
+  <span style="color: #008800; font-style: italic">// &quot;Johnny has been fed!&quot;</span>
+}
+</pre></div>
+</p>
+
+<p><a href="https://play.golang.org/p/Fu__abGi5U">View this example on the Go Playground</a></p>
+
+<h2 id="explanation:176314bb5b9f372fe3d37195de41f249">Explanation</h2>
+
+<p>The <code>MealCooker</code> object keeps track of a list of <code>Observer</code> objects. When it is
+done performing its long <code>cookMeal</code> function, it spins through each <code>Observer</code>
+object and notifies it.</p>
+
+      </div>
+    </div>
+  </div>
+    <footer class="footer">
+      <div class="container">
+        <p class="text-muted">Design Patterns.  Henry Armstrong - 2015</p>
+      </div>
+    </footer>
+  <script>document.write('<script src="http://'
+        + (location.host || 'localhost').split(':')[0]
+		+ ':1313/livereload.js?mindelay=10"></'
+        + 'script>')</script></body>
+</html>
+

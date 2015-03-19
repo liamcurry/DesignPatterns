@@ -1,0 +1,61 @@
+html {
+  position: relative;
+  min-height: 100%;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+body {
+  font-family: 'Ubuntu', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Merriweather', serif;
+}
+
+code, pre {
+  font-family: 'Ubuntu Mono', 'Consolas';
+}
+
+.page-header {
+  margin-top: 80px !important;
+}
+
+.jumbotron {
+  margin-top: 80px;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  background: #e7e7e7;
+}
+
+.text-muted {
+  margin: 20px 0;
+}
+
+.row {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.row-last {
+  margin-bottom: 200px;
+}
+
+.center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+pre[class*=language-]>code[data-language] {
+  max-height: inherit;
+  overflow: auto;
+}
+
+.patterns li {
+  color: #ccc;
+}
